@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0F3C69252A0A9232008713CC /* SoundPlayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F3C69242A0A9232008713CC /* SoundPlayer.swift */; };
 		0FFE6EBA2973C97700594D30 /* MyjankenApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FFE6EB92973C97700594D30 /* MyjankenApp.swift */; };
 		0FFE6EBC2973C97700594D30 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FFE6EBB2973C97700594D30 /* ContentView.swift */; };
 		0FFE6EBE2973C97900594D30 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0FFE6EBD2973C97900594D30 /* Assets.xcassets */; };
@@ -14,6 +15,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		0F3C69242A0A9232008713CC /* SoundPlayer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SoundPlayer.swift; sourceTree = "<group>"; };
 		0FFE6EB62973C97700594D30 /* Myjanken.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Myjanken.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		0FFE6EB92973C97700594D30 /* MyjankenApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyjankenApp.swift; sourceTree = "<group>"; };
 		0FFE6EBB2973C97700594D30 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -53,6 +55,7 @@
 			children = (
 				0FFE6EB92973C97700594D30 /* MyjankenApp.swift */,
 				0FFE6EBB2973C97700594D30 /* ContentView.swift */,
+				0F3C69242A0A9232008713CC /* SoundPlayer.swift */,
 				0FFE6EBD2973C97900594D30 /* Assets.xcassets */,
 				0FFE6EBF2973C97900594D30 /* Preview Content */,
 			);
@@ -138,6 +141,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				0FFE6EBC2973C97700594D30 /* ContentView.swift in Sources */,
+				0F3C69252A0A9232008713CC /* SoundPlayer.swift in Sources */,
 				0FFE6EBA2973C97700594D30 /* MyjankenApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

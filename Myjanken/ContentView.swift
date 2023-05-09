@@ -8,14 +8,91 @@
 import SwiftUI
 
 struct ContentView: View {
+    
+    //じゃんけんの結果を格納する変数(0=初期画面　1=おじさん　2=ギャル　3=サウナ)
+    @State var answerNumber = 0
+    @State var gyaruCount = 0
+
     var body: some View {
         VStack {
-            Image(systemName: "globe")
-                .imageScale(.large)
-                .foregroundColor(.accentColor)
-            Text("Hello, world!")
+           //スペースを追加
+            Spacer()
+            
+            //じゃんけんの数字が0だったら
+            if answerNumber == 0{
+                //初期画面のテキストを表示
+                Text("これからジャンケンをする！")
+                    .padding((.bottom))
+            } else if answerNumber == 1 {
+                //じゃんけんの数字が1だったら、おじさんの画像を指定
+                Image ("ojisan")
+                    .resizable()
+                    .scaledToFit()
+                //スペースを追加
+                 Spacer()
+                Text("おじさん")
+                //下辺に余白を設定
+                    .padding(.bottom)
+            } else if answerNumber == 2 {
+                if(gyaruCount == 3){
+                    //ギャルカウントが3だったら、美魔女の画像を指定
+                    Image ("bimajyo")
+                        .resizable()
+                        .scaledToFit()
+                    //スペースを追加
+                     Spacer()
+                    Text("美魔女")
+                    //下辺に余白を設定
+                        .padding(.bottom)
+                    Text("美魔女降臨")
+                } else{
+                    //じゃんけんの数字が2だったら、ギャルの画像を指定
+                    Image ("gyaru")
+                        .resizable()
+                        .scaledToFit()
+                    //スペースを追加
+                     Spacer()
+                    Text("ギャル")
+                    //下辺に余白を設定
+                        .padding(.bottom)
+                    Text("美魔女まであと")
+                }
+                
+            } else{
+                //じゃんけんの数字が1,2以外だったら、サウナの画像を指定
+                Image ("sauna")
+                    .resizable()
+                    .scaledToFit()
+                //スペースを追加
+                 Spacer()
+                Text("サウナ")
+                //下辺に余白を設定
+                    .padding(.bottom)
+            }
+           
+            
+            Button {
+                //次のじゃんけんへ
+                answerNumber = Int.random(in: 1...3)
+                if(answerNumber == 2){
+                    gyaruCount = gyaruCount + 1
+                }
+                if(gyaruCount == 4){
+                    gyaruCount = 1
+                }
+            } label: {
+                Text("じゃんけんをする")
+                    .frame(maxWidth: .infinity)
+                    .frame(height:100)
+                    .font(.title)
+                    .background(Color.pink)
+                    .foregroundColor(Color.white)
+            }
+            
         }
-        .padding()
+        
+        
+        
     }
 }
 
