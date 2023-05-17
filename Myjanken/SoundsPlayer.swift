@@ -33,20 +33,20 @@ class SoundsPlayer: NSObject {
     //美魔女用プレイヤーの変数
     var bimajyoPlayer: AVAudioPlayer!
     
-    func saunaPlay(){
+    func saunaSound(){
         do{
             //サウナ用のプレイヤーに、音源データを指定
             saunaPlayer = try AVAudioPlayer(data: saunaData)
             
             //サウナの音源再生
-            saunaPlayer.play()
+            saunaSound()
         } catch {
             print("サウナで、エラーが発生しました！")
         }
         
     }
     
-    func ojisanPlay(){
+    func ojisanSound(){
         do{
             //おじさん用のプレイヤーに、音源データを指定
             ojisanPlayer = try AVAudioPlayer(data: ojisanData)
@@ -59,7 +59,7 @@ class SoundsPlayer: NSObject {
         
     }
 
-    func gyaruPlay(){
+    func gyaruSound(){
         do{
             //ギャル用のプレイヤーに、音源データを指定
             gyaruPlayer = try AVAudioPlayer(data: gyaruData)
@@ -72,7 +72,7 @@ class SoundsPlayer: NSObject {
         
     }
     
-    func bimajyoPlay(){
+    func bimajyoSound(){
         do{
             //美魔女用のプレイヤーに、音源データを指定
             bimajyoPlayer = try AVAudioPlayer(data: bimajyoData)

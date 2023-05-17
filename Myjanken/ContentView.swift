@@ -8,12 +8,14 @@
 import SwiftUI
 
 struct ContentView: View {
-    //音を鳴らすためのSoundsPlayerクラスのインスタンス生成
-    let soundPlayer = SoundsPlayer()
     
     //じゃんけんの結果を格納する変数(0=初期画面　1=おじさん　2=ギャル　3=サウナ)
     @State var answerNumber = 0
     @State var gyaruCount = 0
+    
+    // SoundsPlayerのインスタンスを作成
+    let soundPlayer = SoundsPlayer()
+    
     
     var body: some View {
         VStack {
@@ -57,11 +59,11 @@ struct ContentView: View {
                     Text("ギャル")
                     //下辺に余白を設定
                         .padding(.bottom)
-                    Text("美魔女まで\(3-gyaruCount)回")
+                    Text("美魔女まであと")
                 }
                 
-            } else if answerNumber == 3{
-                //じゃんけんの数字が3だったら、サウナの画像を指定
+            } else{
+                //じゃんけんの数字が1,2以外だったら、サウナの画像を指定
                 Image ("sauna")
                     .resizable()
                     .scaledToFit()
@@ -86,16 +88,16 @@ struct ContentView: View {
                 //音を再生
                 switch answerNumber {
                 case 1:
-                    soundPlayer.bimajyoPlay()
+                    soundPlayer.ojisanSound()
                 case 2:
-                    soundPlayer.gyaruPlay()
+                    soundPlayer.gyaruSound()
                 case 3:
-                    soundPlayer.saunaPlay()
+                    soundPlayer.saunaSound()
                 default:
                     break
                 }
                 if gyaruCount == 3 {
-                    soundPlayer.bimajyoPlay()
+                    soundPlayer.bimajyoSound()
                 }
             } label: {
                 Text("じゃんけんをする")
